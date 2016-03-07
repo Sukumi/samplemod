@@ -6,74 +6,75 @@ This simple project is an example repo for Python projects.
 `Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
 
 
+# Repository Structure and Python   
+January 26, 2013  
+It's Important.  
+  
+Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project's architecture.  
 
-# Repository Structure and Python
-January 26, 2013
-It's Important.
+When a potential user or contributor lands on your repository's page, they see a few things:  
 
-Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project's architecture.
+    Project Name  
+    Project Description  
+    Bunch O' Files  
 
-When a potential user or contributor lands on your repository's page, they see a few things:
+Only when they scroll below the fold will the user see your project's README.  
 
-    Project Name
-    Project Description
-    Bunch O' Files
+If your repo is a massive dump of files or a nested mess of directories, they might look elsewhere before even reading your beautiful documentation.  
 
-Only when they scroll below the fold will the user see your project's README.
+    Dress for the job you want, not the job you have.  
 
-If your repo is a massive dump of files or a nested mess of directories, they might look elsewhere before even reading your beautiful documentation.
+Of course, first impressions aren't everything. You and your colleagues will spend countless hours working with this repository, eventually becoming intimately familiar with every nook and cranny. The layout of it is important.  
+Sample Repository  
 
-    Dress for the job you want, not the job you have.
+tl;dr: This is what I recommend.  
 
-Of course, first impressions aren't everything. You and your colleagues will spend countless hours working with this repository, eventually becoming intimately familiar with every nook and cranny. The layout of it is important.
-Sample Repository
+This repository is available on GitHub.  
 
-tl;dr: This is what I recommend.
+README.rst  
+LICENSE  
+setup.py  
+requirements.txt  
+sample/__init__.py  
+sample/core.py  
+sample/helpers.py  
+docs/conf.py  
+docs/index.rst  
+tests/test_basic.py  
+tests/test_advanced.py  
 
-This repository is available on GitHub.
+Let's get into some specifics. 
 
-README.rst
-LICENSE
-setup.py
-requirements.txt
-sample/__init__.py
-sample/core.py
-sample/helpers.py
-docs/conf.py
-docs/index.rst
-tests/test_basic.py
-tests/test_advanced.py
+# The Actual Module  
 
-Let's get into some specifics.
-The Actual Module
+Location: ./sample/ or ./sample.py   
+Purpose:  The code of interest.  
 
-Location: ./sample/ or ./sample.py 
-Purpose:  The code of interest.
+Your module package is the core focus of the repository. It should not be tucked away:  
+  
+./sample/  
+  
+If your module consists of only a single file, you can place it directly in the root of your repository:  
+  
+./sample.py  
+  
+Your library does not belong in an ambiguous src or python subdirectory.  
+License  
+  
+Location: ./LICENSE   
+Purpose:  Lawyering up.  
+  
+This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.  
+  
+No excuses.  
+Setup.py  
+  
+Location: ./setup.py   
+Purpose:  Package and distribution management.  
+  
+If your module package is at the root of your repository, this should obviously be at the root as well.  
 
-Your module package is the core focus of the repository. It should not be tucked away:
-
-./sample/
-
-If your module consists of only a single file, you can place it directly in the root of your repository:
-
-./sample.py
-
-Your library does not belong in an ambiguous src or python subdirectory.
-License
-
-Location: ./LICENSE 
-Purpose:  Lawyering up.
-
-This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
-
-No excuses.
-Setup.py
-
-Location: ./setup.py 
-Purpose:  Package and distribution management.
-
-If your module package is at the root of your repository, this should obviously be at the root as well.
-Requirements File
+# Requirements File
 
 Location: ./requirements.txt 
 Purpose:  Development dependencies.
